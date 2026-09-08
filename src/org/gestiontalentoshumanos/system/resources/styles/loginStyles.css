@@ -1,0 +1,109 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 8 sept 2026, 15:43:47
+    Author     : informatica
+*/
+
+.brand-panel {
+    -fx-background-color: linear-gradient(to bottom right, #6633ff, #66ffff);
+}
+ 
+.brand-icon-badge {
+    -fx-background-color: rgba(255,255,255,0.12);
+    -fx-background-radius: 50%;
+}
+ 
+.brand-icon {
+    -fx-font-size: 30px;
+}
+ 
+.brand-title {
+    -fx-text-fill: white;
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+}
+    
+.brand-subtitle {
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-text-alignment: center;
+}
+ 
+.brand-tagline {
+    -fx-text-fill: #cc00cc;
+    -fx-font-size: 11px;
+    -fx-font-style: italic;
+    -fx-text-alignment: center;
+}
+
+
+.form-panel {
+    -fx-background-color: red;
+}
+ 
+.form-title {
+    -fx-text-fill: #3333ff;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+}
+ 
+.form-subtitle {
+    -fx-text-fill: #6b7280;
+    -fx-font-size: 11.5px;
+}
+ 
+.input-group {
+    -fx-background-color: #f9fafb;
+    -fx-background-radius: 8;
+    -fx-border-color: #e5e7eb;
+    -fx-border-radius: 8;
+    -fx-padding: 6 10 6 12;
+}
+ 
+.input-icon {
+    -fx-font-size: 13px;
+    -fx-opacity: 0.6;
+}
+ 
+.input-field {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-font-size: 13px;
+    -fx-padding: 6 0 6 0;
+}
+ 
+.toggle-eye {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-font-size: 12px;
+    -fx-cursor: hand;
+    -fx-opacity: 0.6;
+}
+ 
+.error-label {
+    -fx-text-fill: #dc2626;
+    -fx-font-size: 11px;
+}
+ 
+.btn-primary {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-padding: 11 0 11 0;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+ 
+.btn-primary:hover {
+    -fx-background-color: #cc00cc;
+}
+ 
+.form-footer {
+    -fx-text-fill: #9ca3af;
+    -fx-font-size: 9.5px;
+}
+ 

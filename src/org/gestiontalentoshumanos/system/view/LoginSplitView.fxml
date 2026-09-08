@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox prefHeight="460.0" prefWidth="760.0" stylesheets="@../resources/styles/loginStyles.css" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.gestiontalentoshumanos.system.controller.LoginController">
+
+    <!-- ===================== PANEL IZQUIERDO (branding) ===================== -->
+    <VBox alignment="CENTER" prefWidth="380.0" spacing="14.0" styleClass="brand-panel" HBox.hgrow="ALWAYS">
+        <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+        </padding>
+
+        <StackPane maxHeight="72.0" maxWidth="72.0" minHeight="72.0" minWidth="72.0" styleClass="brand-icon-badge">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@simple-line-drawing-group-of-people-teamwork-icon-illustration-vector.jpg" />
+               </image>
+            </ImageView>
+         </children>
+        </StackPane>
+
+        <Label styleClass="brand-title" text="RRHH" />
+        <Label styleClass="brand-subtitle" text="Gestión de Talento Humano" wrapText="true" />
+
+        <Region maxHeight="18.0" VBox.vgrow="ALWAYS" />
+
+        <Label styleClass="brand-tagline" text="&quot;Tu talento, nuestro mayor recurso&quot;" wrapText="true" />
+    </VBox>
+
+    <!-- ===================== PANEL DERECHO (formulario) ===================== -->
+    <VBox alignment="CENTER" prefWidth="380.0" spacing="22.0" styleClass="form-panel" HBox.hgrow="ALWAYS">
+        <padding>
+            <Insets bottom="30.0" left="45.0" right="45.0" top="40.0" />
+        </padding>
+
+        <VBox alignment="CENTER" spacing="4.0">
+            <Label styleClass="form-title" text="Iniciar Sesión" />
+            <Label styleClass="form-subtitle" text="Ingresa tus credenciales para acceder al sistema" textAlignment="CENTER" wrapText="true" />
+        </VBox>
+
+        <VBox maxWidth="290.0" spacing="14.0">
+
+            <!-- Campo Usuario -->
+            <HBox alignment="CENTER_LEFT" spacing="8.0" styleClass="input-group">
+                <Label styleClass="input-icon" text="👤" />
+                <TextField fx:id="txtUsuario" promptText="Usuario" styleClass="input-field" HBox.hgrow="ALWAYS" />
+            </HBox>
+
+            <!-- Campo Contraseña -->
+            <HBox alignment="CENTER_LEFT" spacing="8.0" styleClass="input-group">
+                <Label styleClass="input-icon" text="🔒" />
+                <PasswordField fx:id="txtPassword" promptText="Contraseña" styleClass="input-field" HBox.hgrow="ALWAYS" />
+                <TextField fx:id="txtPasswordVisible" managed="false" promptText="Contraseña" styleClass="input-field" visible="false" HBox.hgrow="ALWAYS" />
+                <ToggleButton fx:id="btnTogglePassword" onAction="#onTogglePasswordVisibility" styleClass="toggle-eye" text="👁" />
+            </HBox>
+
+            <Label fx:id="lblError" styleClass="error-label" text="" wrapText="true" />
+
+            <!-- Botón de acceso -->
+            <Button fx:id="btnLogin" defaultButton="true" maxWidth="Infinity" onAction="#onLoginClick" styleClass="btn-primary" text="Iniciar Sesión   →" />
+        </VBox>
+
+        <Region VBox.vgrow="ALWAYS" />
+
+        <Label styleClass="form-footer" text="© 2026 RRHH · Gestión de Talento Humano" />
+    </VBox>
+
+</HBox>
