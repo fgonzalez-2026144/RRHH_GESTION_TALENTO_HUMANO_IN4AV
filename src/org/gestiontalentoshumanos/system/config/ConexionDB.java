@@ -12,7 +12,7 @@ public class ConexionDB {
     private static ConexionDB instanciaConexionDB;
     private Connection connection;
     
-    private ConexionDB(){
+      private ConexionDB(){
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://" + 

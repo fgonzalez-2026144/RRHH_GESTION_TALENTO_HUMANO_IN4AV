@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.Region?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.gestiontalentoshumanos.system.controller.NominaController"
+            stylesheets="@../styles/nomina.css"
+            prefHeight="720.0"
+            prefWidth="1200.0">
+
+    <!-- ========================= -->
+    <!-- MENÚ LATERAL -->
+    <!-- ========================= -->
+
+    <left>
+        <VBox prefWidth="220.0"
+              styleClass="sidebar">
+
+            <children>
+
+                <!-- LOGO -->
+                <VBox alignment="CENTER_LEFT"
+                      spacing="4.0"
+                      prefHeight="100.0">
+
+                    <padding>
+                        <Insets top="20" right="20" bottom="20" left="20"/>
+                    </padding>
+
+                    <children>
+
+                        <Label text="RRHH"
+                               styleClass="logo-title"/>
+
+                        <Label text="Gestión de Talento Humano"
+                               styleClass="logo-subtitle"/>
+
+                    </children>
+
+                </VBox>
+
+                <!-- MENÚ -->
+                <VBox spacing="8.0"
+                      VBox.vgrow="ALWAYS">
+
+                    <padding>
+                        <Insets top="10" right="12" bottom="10" left="12"/>
+                    </padding>
+
+                    <children>
+
+                        <Button text="⌂   Inicio"
+                                styleClass="menu-button"
+                                maxWidth="1.7976931348623157E308"
+                                fx:id="btnInicio"
+                                onAction="#irInicio"/>
+
+                        <Button text="♟   Colaboradores"
+                                styleClass="menu-button"
+                                maxWidth="1.7976931348623157E308"
+                                fx:id="btnColaboradores"
+                                onAction="#irColaboradores"/>
+
+                        <Button text="▣   Nómina"
+                                styleClass="menu-button-active"
+                                maxWidth="1.7976931348623157E308"
+                                fx:id="btnNomina"/>
+
+                        <Button text="▥   Reportes"
+                                styleClass="menu-button"
+                                maxWidth="1.7976931348623157E308"
+                                fx:id="btnReportes"
+                                onAction="#irReportes"/>
+
+                    </children>
+
+                </VBox>
+
+                <!-- USUARIO -->
+                <VBox spacing="5.0">
+
+                    <padding>
+                        <Insets top="15" right="15" bottom="15" left="15"/>
+                    </padding>
+
+                    <children>
+
+                        <Label text="●  Usuario"
+                               styleClass="user-label"/>
+
+                        <Label text="Encargado de Nómina"
+                               styleClass="user-role"/>
+
+                        <Button text="↪  Cerrar sesión"
+                                styleClass="logout-button"
+                                maxWidth="1.7976931348623157E308"
+                                onAction="#cerrarSesion"/>
+
+                    </children>
+
+                </VBox>
+
+            </children>
+
+        </VBox>
+    </left>
+
+
+    <!-- ========================= -->
+    <!-- CONTENIDO PRINCIPAL -->
+    <!-- ========================= -->
+
+    <center>
+
+        <VBox spacing="20.0"
+              styleClass="main-container">
+
+            <padding>
+                <Insets top="25" right="30" bottom="25" left="30"/>
+            </padding>
+
+            <children>
+
+                <!-- ENCABEZADO -->
+
+                <HBox alignment="CENTER_LEFT"
+                      spacing="10.0">
+
+                    <children>
+
+                        <VBox spacing="4.0"
+                              HBox.hgrow="ALWAYS">
+
+                            <children>
+
+                                <Label text="Control de Nómina"
+                                       styleClass="page-title"/>
+
+                                <Label text="Consulta y gestión de la información salarial de los colaboradores."
+                                       styleClass="page-description"/>
+
+                            </children>
+
+                        </VBox>
+
+                        <Label text="Nómina"
+                               styleClass="role-badge"/>
+
+                    </children>
+
+                </HBox>
+
+
+                <!-- ========================= -->
+                <!-- TARJETAS -->
+                <!-- ========================= -->
+
+                <HBox spacing="15.0"
+                      prefHeight="110.0">
+
+                    <children>
+
+                        <!-- TOTAL COLABORADORES -->
+
+                        <VBox spacing="8.0"
+                              styleClass="stat-card"
+                              HBox.hgrow="ALWAYS">
+
+                            <children>
+
+                                <Label text="TOTAL COLABORADORES"
+                                       styleClass="stat-title"/>
+
+                                <Label fx:id="lblTotalColaboradores"
+                                       text="0"
+                                       styleClass="stat-number"/>
+
+                                <Label text="Registrados en el sistema"
+                                       styleClass="stat-description"/>
+
+                            </children>
+
+                        </VBox>
+
+
+                        <!-- TOTAL SALARIOS -->
+
+                        <VBox spacing="8.0"
+                              styleClass="stat-card"
+                              HBox.hgrow="ALWAYS">
+
+                            <children>
+
+                                <Label text="TOTAL DE SALARIOS"
+                                       styleClass="stat-title"/>
+
+                                <Label fx:id="lblTotalSalarios"
+                                       text="Q 0.00"
+                                       styleClass="stat-number"/>
+
+                                <Label text="Salario base mensual"
+                                       styleClass="stat-description"/>
+
+                            </children>
+
+                        </VBox>
+
+
+                        <!-- ESTADO -->
+
+                        <VBox spacing="8.0"
+                              styleClass="stat-card"
+                              HBox.hgrow="ALWAYS">
+
+                            <children>
+
+                                <Label text="ESTADO"
+                                       styleClass="stat-title"/>
+
+                                <Label fx:id="lblEstado"
+                                       text="Pendiente"
+                                       styleClass="status-pending"/>
+
+                                <Label text="Estado de la nómina"
+                                       styleClass="stat-description"/>
+
+                            </children>
+
+                        </VBox>
+
+                    </children>
+
+                </HBox>
+
+
+                <!-- ========================= -->
+                <!-- TABLA -->
+                <!-- ========================= -->
+
+                <VBox spacing="12.0"
+                      styleClass="table-container"
+                      VBox.vgrow="ALWAYS">
+
+                    <children>
+
+                        <!-- TÍTULO TABLA -->
+
+                        <HBox alignment="CENTER_LEFT"
+                              spacing="10.0">
+
+                            <children>
+
+                                <Label text="Detalle de colaboradores"
+                                       styleClass="section-title"/>
+
+                                <Region HBox.hgrow="ALWAYS"/>
+
+                                <Button text="↻ Actualizar"
+                                        styleClass="secondary-button"
+                                        onAction="#actualizarTabla"/>
+
+                            </children>
+
+                        </HBox>
+
+
+                        <!-- BUSCADOR -->
+
+                        <HBox spacing="10.0">
+
+                            <children>
+
+                                <TextField fx:id="txtBuscar"
+                                           promptText="Buscar por ID, nombre, puesto o departamento..."
+                                           styleClass="search-field"
+                                           HBox.hgrow="ALWAYS"
+                                           onKeyReleased="#buscarColaborador"/>
+
+                            </children>
+
+                        </HBox>
+
+
+                        <!-- TABLEVIEW -->
+
+                        <TableView fx:id="tablaColaboradores"
+                                   VBox.vgrow="ALWAYS"
+                                   styleClass="employee-table">
+
+                            <columns>
+
+                                <TableColumn fx:id="colId"
+                                             text="ID"
+                                             prefWidth="70.0"/>
+
+                                <TableColumn fx:id="colNombre"
+                                             text="Nombre completo"
+                                             prefWidth="180.0"/>
+
+                                <TableColumn fx:id="colPuesto"
+                                             text="Puesto"
+                                             prefWidth="130.0"/>
+
+                                <TableColumn fx:id="colDepartamento"
+                                             text="Departamento"
+                                             prefWidth="130.0"/>
+
+                                <TableColumn fx:id="colFecha"
+                                             text="Fecha contratación"
+                                             prefWidth="130.0"/>
+
+                                <TableColumn fx:id="colSalario"
+                                             text="Salario base"
+                                             prefWidth="120.0"/>
+
+                                <TableColumn fx:id="colAccion"
+                                             text="Acción"
+                                             prefWidth="140.0"/>
+
+                            </columns>
+
+                        </TableView>
+
+
+                        <!-- INFORMACIÓN DE PERMISOS -->
+
+                        <HBox alignment="CENTER_LEFT"
+                              spacing="8.0"
+                              styleClass="permission-box">
+
+                            <children>
+
+                                <Label text="ℹ"
+                                       styleClass="permission-icon"/>
+
+                                <Label text="El usuario de Nómina únicamente puede modificar el salario de los colaboradores."
+                                       styleClass="permission-text"/>
+
+                            </children>
+
+                        </HBox>
+
+                    </children>
+
+                </VBox>
+
+            </children>
+
+        </VBox>
+
+    </center>
+
+</BorderPane>

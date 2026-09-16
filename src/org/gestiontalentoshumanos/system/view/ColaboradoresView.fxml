@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.gestiontalentoshumanos.system.controller.ColaboradoresController"
+            stylesheets="@../styles/colaboradores.css"
+            prefHeight="720.0"
+            prefWidth="1200.0">
+
+    <!-- ========================= -->
+    <!-- MENÚ LATERAL -->
+    <!-- ========================= -->
+
+    <left>
+
+        <VBox prefWidth="220.0"
+              styleClass="sidebar">
+
+            <children>
+
+                <!-- LOGO -->
+
+                <VBox spacing="4.0"
+                      alignment="CENTER_LEFT"
+                      prefHeight="100.0">
+
+                    <padding>
+                        <Insets top="20"
+                                right="20"
+                                bottom="20"
+                                left="20"/>
+                    </padding>
+
+                    <children>
+
+                        <Label text="RRHH"
+                               styleClass="logo-title"/>
+
+                        <Label text="Gestión de Talento Humano"
+                               styleClass="logo-subtitle"/>
+
+                    </children>
+
+                </VBox>
+
+
+                <!-- MENÚ -->
+
+                <VBox spacing="8.0"
+                      VBox.vgrow="ALWAYS">
+
+                    <padding>
+                        <Insets top="10"
+                                right="12"
+                                bottom="10"
+                                left="12"/>
+                    </padding>
+
+                    <children>
+
+                        <Button text="⌂   Inicio"
+                                fx:id="btnInicio"
+                                styleClass="menu-button"
+                                maxWidth="1.7976931348623157E308"
+                                onAction="#irInicio"/>
+
+                        <Button text="♟   Colaboradores"
+                                fx:id="btnColaboradores"
+                                styleClass="menu-button-active"
+                                maxWidth="1.7976931348623157E308"/>
+
+                        <Button text="▣   Nómina"
+                                fx:id="btnNomina"
+                                styleClass="menu-button"
+                                maxWidth="1.7976931348623157E308"
+                                onAction="#irNomina"/>
+
+                        <Button text="▥   Reportes"
+                                fx:id="btnReportes"
+                                styleClass="menu-button"
+                                maxWidth="1.7976931348623157E308"
+                                onAction="#irReportes"/>
+
+                    </children>
+
+                </VBox>
+
+
+                <!-- USUARIO -->
+
+                <VBox spacing="5.0">
+
+                    <padding>
+                        <Insets top="15"
+                                right="15"
+                                bottom="15"
+                                left="15"/>
+                    </padding>
+
+                    <children>
+
+                        <Label text="●  Usuario"
+                               styleClass="user-label"/>
+
+                        <Label text="Administrador"
+                               styleClass="user-role"/>
+
+                        <Button text="↪  Cerrar sesión"
+                                fx:id="btnCerrarSesion"
+                                styleClass="logout-button"
+                                maxWidth="1.7976931348623157E308"
+                                onAction="#cerrarSesion"/>
+
+                    </children>
+
+                </VBox>
+
+            </children>
+
+        </VBox>
+
+    </left>
+
+
+    <!-- ========================= -->
+    <!-- CONTENIDO -->
+    <!-- ========================= -->
+
+    <center>
+
+        <VBox spacing="20.0"
+              styleClass="main-container">
+
+            <padding>
+                <Insets top="25"
+                        right="30"
+                        bottom="25"
+                        left="30"/>
+            </padding>
+
+            <children>
+
+
+                <!-- ========================= -->
+                <!-- ENCABEZADO -->
+                <!-- ========================= -->
+
+                <HBox alignment="CENTER_LEFT"
+                      spacing="10.0">
+
+                    <children>
+
+                        <VBox spacing="4.0"
+                              HBox.hgrow="ALWAYS">
+
+                            <children>
+
+                                <Label text="Colaboradores Registrados"
+                                       styleClass="page-title"/>
+
+                                <Label text="Consulta, registra y administra la información de los colaboradores."
+                                       styleClass="page-description"/>
+
+                            </children>
+
+                        </VBox>
+
+
+                        <Label text="Administrador"
+                               styleClass="role-badge"/>
+
+                    </children>
+
+                </HBox>
+
+
+                <!-- ========================= -->
+                <!-- TARJETAS -->
+                <!-- ========================= -->
+
+                <HBox spacing="15.0"
+                      prefHeight="105.0">
+
+                    <children>
+
+
+                        <!-- TOTAL -->
+
+                        <VBox spacing="7.0"
+                              styleClass="stat-card"
+                              HBox.hgrow="ALWAYS">
+
+                            <children>
+
+                                <Label text="TOTAL COLABORADORES"
+                                       styleClass="stat-title"/>
+
+                                <Label fx:id="lblTotalColaboradores"
+                                       text="0"
+                                       styleClass="stat-number"/>
+
+                                <Label text="Personas registradas"
+                                       styleClass="stat-description"/>
+
+                            </children>
+
+                        </VBox>
+
+
+                        <!-- ACTIVOS -->
+
+                        <VBox spacing="7.0"
+                              styleClass="stat-card"
+                              HBox.hgrow="ALWAYS">
+
+                            <children>
+
+                                <Label text="COLABORADORES ACTIVOS"
+                                       styleClass="stat-title"/>
+
+                                <Label fx:id="lblActivos"
+                                       text="0"
+                                       styleClass="stat-number"/>
+
+                                <Label text="Actualmente registrados"
+                                       styleClass="stat-description"/>
+
+                            </children>
+
+                        </VBox>
+
+
+                        <!-- NUEVOS -->
+
+                        <VBox spacing="7.0"
+                              styleClass="stat-card"
+                              HBox.hgrow="ALWAYS">
+
+                            <children>
+
+                                <Label text="NUEVOS"
+                                       styleClass="stat-title"/>
+
+                                <Label fx:id="lblNuevos"
+                                       text="0"
+                                       styleClass="stat-number"/>
+
+                                <Label text="Registros recientes"
+                                       styleClass="stat-description"/>
+
+                            </children>
+
+                        </VBox>
+
+                    </children>
+
+                </HBox>
+
+
+                <!-- ========================= -->
+                <!-- TABLA -->
+                <!-- ========================= -->
+
+                <VBox spacing="14.0"
+                      styleClass="table-container"
+                      VBox.vgrow="ALWAYS">
+
+                    <children>
+
+
+                        <!-- TÍTULO + BOTÓN NUEVO -->
+
+                        <HBox alignment="CENTER_LEFT"
+                              spacing="10.0">
+
+                            <children>
+
+                                <VBox spacing="3.0"
+                                      HBox.hgrow="ALWAYS">
+
+                                    <children>
+
+                                        <Label text="Lista de colaboradores"
+                                               styleClass="section-title"/>
+
+                                        <Label text="Información registrada en el sistema"
+                                               styleClass="section-description"/>
+
+                                    </children>
+
+                                </VBox>
+
+
+                                <Button text="+  Nuevo colaborador"
+                                        fx:id="btnNuevo"
+                                        styleClass="primary-button"
+                                        onAction="#nuevoColaborador"/>
+
+                            </children>
+
+                        </HBox>
+
+
+                        <!-- BUSCADOR -->
+
+                        <HBox spacing="10.0">
+
+                            <children>
+
+                                <TextField fx:id="txtBuscar"
+                                           promptText="Buscar por ID, nombre, puesto o departamento..."
+                                           styleClass="search-field"
+                                           HBox.hgrow="ALWAYS"
+                                           onKeyReleased="#buscarColaborador"/>
+
+                                <Button text="↻ Actualizar"
+                                        fx:id="btnActualizar"
+                                        styleClass="secondary-button"
+                                        onAction="#actualizarTabla"/>
+
+                            </children>
+
+                        </HBox>
+
+
+                        <!-- ========================= -->
+                        <!-- TABLEVIEW -->
+                        <!-- ========================= -->
+
+                        <TableView fx:id="tablaColaboradores"
+                                   styleClass="employee-table"
+                                   VBox.vgrow="ALWAYS">
+
+                            <columns>
+
+                                <TableColumn fx:id="colId"
+                                             text="ID"
+                                             prefWidth="70.0"/>
+
+                                <TableColumn fx:id="colNombre"
+                                             text="Nombre completo"
+                                             prefWidth="190.0"/>
+
+                                <TableColumn fx:id="colPuesto"
+                                             text="Puesto"
+                                             prefWidth="140.0"/>
+
+                                <TableColumn fx:id="colDepartamento"
+                                             text="Departamento"
+                                             prefWidth="140.0"/>
+
+                                <TableColumn fx:id="colFecha"
+                                             text="Fecha contratación"
+                                             prefWidth="130.0"/>
+
+                                <TableColumn fx:id="colSalario"
+                                             text="Salario base"
+                                             prefWidth="120.0"/>
+
+                                <TableColumn fx:id="colAcciones"
+                                             text="Acciones"
+                                             prefWidth="150.0"/>
+
+                            </columns>
+
+                        </TableView>
+
+
+                        <!-- PIE -->
+
+                        <HBox alignment="CENTER_LEFT">
+
+                            <children>
+
+                                <Label fx:id="lblRegistros"
+                                       text="Mostrando 0 colaboradores"
+                                       styleClass="records-label"/>
+
+                                <Region HBox.hgrow="ALWAYS"/>
+
+                                <Label text="Información protegida según el perfil de usuario"
+                                       styleClass="security-label"/>
+
+                            </children>
+
+                        </HBox>
+
+                    </children>
+
+                </VBox>
+
+            </children>
+
+        </VBox>
+
+    </center>
+
+</BorderPane>
