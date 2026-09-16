@@ -1,0 +1,253 @@
+/* =====================================
+   ESTILO GENERAL
+   ===================================== */
+
+.root {
+    -fx-font-family: "Segoe UI";
+    -fx-background-color: #f4f7fb;
+}
+
+
+/* =====================================
+   MENÚ LATERAL
+   ===================================== */
+
+.sidebar {
+    -fx-background-color: #12345b;
+}
+
+.logo-title {
+    -fx-text-fill: white;
+    -fx-font-size: 25px;
+    -fx-font-weight: bold;
+}
+
+.logo-subtitle {
+    -fx-text-fill: #c9d7e8;
+    -fx-font-size: 11px;
+}
+
+.menu-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #d9e5f2;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 12px 15px;
+    -fx-cursor: hand;
+    -fx-background-radius: 6px;
+}
+
+.menu-button:hover {
+    -fx-background-color: #214c7c;
+    -fx-text-fill: white;
+}
+
+.menu-button-active {
+    -fx-background-color: #2878d4;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 12px 15px;
+    -fx-background-radius: 6px;
+}
+
+.user-label {
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.user-role {
+    -fx-text-fill: #b9cce0;
+    -fx-font-size: 11px;
+}
+
+.logout-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #d8e4f0;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 8px;
+    -fx-cursor: hand;
+}
+
+
+/* =====================================
+   CONTENIDO
+   ===================================== */
+
+.main-container {
+    -fx-background-color: #f4f7fb;
+}
+
+.page-title {
+    -fx-text-fill: #12345b;
+    -fx-font-size: 27px;
+    -fx-font-weight: bold;
+}
+
+.page-description {
+    -fx-text-fill: #6d7d91;
+    -fx-font-size: 13px;
+}
+
+.role-badge {
+    -fx-background-color: #e5f0ff;
+    -fx-text-fill: #1d68b7;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 8px 14px;
+    -fx-background-radius: 15px;
+}
+
+
+/* =====================================
+   TARJETAS
+   ===================================== */
+
+.stat-card {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-border-color: #e0e7ef;
+    -fx-border-radius: 8px;
+    -fx-padding: 18px;
+}
+
+.stat-title {
+    -fx-text-fill: #718096;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.stat-number {
+    -fx-text-fill: #12345b;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+.stat-description {
+    -fx-text-fill: #8a98a9;
+    -fx-font-size: 11px;
+}
+
+.status-pending {
+    -fx-text-fill: #d88a00;
+    -fx-font-size: 23px;
+    -fx-font-weight: bold;
+}
+
+
+/* =====================================
+   TABLA
+   ===================================== */
+
+.table-container {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-border-color: #e0e7ef;
+    -fx-border-radius: 8px;
+    -fx-padding: 18px;
+}
+
+.section-title {
+    -fx-text-fill: #12345b;
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+}
+
+.search-field {
+    -fx-background-color: #f8fafc;
+    -fx-border-color: #d5deea;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 10px;
+}
+
+.search-field:focused {
+    -fx-border-color: #2878d4;
+}
+
+
+/* =====================================
+   TABLEVIEW
+   ===================================== */
+
+.employee-table {
+    -fx-background-color: white;
+    -fx-border-color: #e0e7ef;
+}
+
+.employee-table .column-header-background {
+    -fx-background-color: #eef3f8;
+}
+
+.employee-table .column-header {
+    -fx-background-color: #eef3f8;
+    -fx-size: 40px;
+}
+
+.employee-table .column-header .label {
+    -fx-text-fill: #40556d;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.employee-table .table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent #edf1f5 transparent;
+}
+
+.employee-table .table-row-cell:hover {
+    -fx-background-color: #f2f7fd;
+}
+
+.employee-table .table-row-cell:selected {
+    -fx-background-color: #dcecff;
+}
+
+.employee-table .table-cell {
+    -fx-text-fill: #35485e;
+    -fx-font-size: 12px;
+    -fx-padding: 8px;
+}
+
+
+/* =====================================
+   BOTONES
+   ===================================== */
+
+.secondary-button {
+    -fx-background-color: #edf3fa;
+    -fx-text-fill: #28547d;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5px;
+    -fx-padding: 9px 15px;
+    -fx-cursor: hand;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #dbe8f6;
+}
+
+
+/* =====================================
+   INFORMACIÓN DE PERMISOS
+   ===================================== */
+
+.permission-box {
+    -fx-background-color: #edf6ff;
+    -fx-background-radius: 5px;
+    -fx-padding: 10px;
+}
+
+.permission-icon {
+    -fx-text-fill: #2672bd;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.permission-text {
+    -fx-text-fill: #4d6680;
+    -fx-font-size: 11px;
+}
